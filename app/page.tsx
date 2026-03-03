@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -11,6 +11,21 @@ export default function Page() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [lightbox, setLightbox] = useState<{ project: PortfolioProject; idx: number } | null>(null)
   const [showAllProjects, setShowAllProjects] = useState(false)
+
+  const heroImages = [
+    '/hero-background.jpg',
+    '/hero-2.jpg',
+    '/hero-3.jpg',
+    '/hero-4.jpg',
+  ]
+  const [heroSlide, setHeroSlide] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroSlide(prev => (prev + 1) % heroImages.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
 
   const DEFAULT_VISIBLE = 6
   const visibleProjects = showAllProjects ? portfolioProjects : portfolioProjects.slice(0, DEFAULT_VISIBLE)
@@ -155,14 +170,31 @@ export default function Page() {
 
       {/* Hero Section */}
       <section id="hero" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <Image
-          src="/hero-background.jpg"
-          alt="TM Builders - Building Your Dream Home at Bahria Town"
-          fill
-          priority
-          className="object-cover object-center"
-        />
+        {/* Slideshow Images */}
+        {heroImages.map((src, i) => (
+          <Image
+            key={src}
+            src={src}
+            alt="TM Builders - Building Your Dream Home at Bahria Town"
+            fill
+            priority={i === 0}
+            className={`object-cover object-center transition-opacity duration-1000 ${
+              i === heroSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {heroImages.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setHeroSlide(i)}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                i === heroSlide ? 'bg-amber-400 w-6' : 'bg-white/50 hover:bg-white/80'
+              }`}
+            />
+          ))}
+        </div>
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/50" />
         {/* Content */}
