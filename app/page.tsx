@@ -23,7 +23,7 @@ export default function Page() {
   useEffect(() => {
     const timer = setInterval(() => {
       setHeroSlide(prev => (prev + 1) % heroImages.length)
-    }, 5000)
+    }, 4000)
     return () => clearInterval(timer)
   }, [])
 

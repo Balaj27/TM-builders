@@ -62,7 +62,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "/portfolio/H%23189_RafiBlock/H%23189_RafiBlock4.jfif",
       "/portfolio/H%23189_RafiBlock/H%23189_RafiBlock5.jfif",
     ],
-    year: 2026,
+    year: 2025,
   },
 
   // ─── H#709 Rafi Block ───────────────────────────────────────────────────────
@@ -130,7 +130,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "/portfolio/H%23780_RafiBlock/H%23780_RafiBlock3.jfif",
       "/portfolio/H%23780_RafiBlock/H%23780_RafiBlock4.jfif",
     ],
-    year: 2026,
+    year: 2023,
   },
 
   // ─── H#787 Rafi Block ───────────────────────────────────────────────────────
@@ -182,7 +182,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "/portfolio/H%23794_RafiBlock/H%23794_RafiBlock2.jfif",
       "/portfolio/H%23794_RafiBlock/H%23794_RafiBlock3.jfif",
     ],
-    year: 2026,
+    year: 2019,
   },
 
   // ─── H#798 Rafi Block ───────────────────────────────────────────────────────
