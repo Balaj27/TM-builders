@@ -52,7 +52,7 @@ export default function Page() {
   return (
     <div className="w-full bg-background text-foreground">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background border-b border-border">
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 backdrop-blur-md" style={{ backgroundColor: 'rgba(0,0,0,0.15)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
@@ -67,8 +67,8 @@ export default function Page() {
                 />
               </div>
               <div>
-                <h1 className="text-lg sm:text-xl font-bold text-primary">TM Builders</h1>
-                <p className="text-xs text-muted-foreground">Construction Company</p>
+                <h1 className="text-lg sm:text-xl font-bold text-white drop-shadow">TM Builders</h1>
+                <p className="text-xs text-white/70">Construction Company</p>
               </div>
             </div>
 
@@ -76,31 +76,31 @@ export default function Page() {
             <div className="hidden md:flex items-center gap-8">
               <button
                 onClick={() => scrollToSection('hero')}
-                className="text-foreground hover:text-accent transition"
+                className="text-white/90 hover:text-amber-400 transition font-medium"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection('about')}
-                className="text-foreground hover:text-accent transition"
+                className="text-white/90 hover:text-amber-400 transition font-medium"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection('services')}
-                className="text-foreground hover:text-accent transition"
+                className="text-white/90 hover:text-amber-400 transition font-medium"
               >
                 Services
               </button>
               <button
                 onClick={() => scrollToSection('portfolio')}
-                className="text-foreground hover:text-accent transition"
+                className="text-white/90 hover:text-amber-400 transition font-medium"
               >
                 Portfolio
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="text-foreground hover:text-accent transition"
+                className="text-white/90 hover:text-amber-400 transition font-medium"
               >
                 Contact
               </button>
@@ -109,7 +109,7 @@ export default function Page() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden"
+              className="md:hidden text-white"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -120,31 +120,31 @@ export default function Page() {
             <div className="md:hidden pb-4 space-y-2">
               <button
                 onClick={() => scrollToSection('hero')}
-                className="block w-full text-left px-4 py-2 hover:bg-muted rounded"
+                className="block w-full text-left px-4 py-2 text-white/90 hover:text-amber-400 rounded transition"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection('about')}
-                className="block w-full text-left px-4 py-2 hover:bg-muted rounded"
+                className="block w-full text-left px-4 py-2 text-white/90 hover:text-amber-400 rounded transition"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection('services')}
-                className="block w-full text-left px-4 py-2 hover:bg-muted rounded"
+                className="block w-full text-left px-4 py-2 text-white/90 hover:text-amber-400 rounded transition"
               >
                 Services
               </button>
               <button
                 onClick={() => scrollToSection('portfolio')}
-                className="block w-full text-left px-4 py-2 hover:bg-muted rounded"
+                className="block w-full text-left px-4 py-2 text-white/90 hover:text-amber-400 rounded transition"
               >
                 Portfolio
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="block w-full text-left px-4 py-2 hover:bg-muted rounded"
+                className="block w-full text-left px-4 py-2 text-white/90 hover:text-amber-400 rounded transition"
               >
                 Contact
               </button>
@@ -154,7 +154,7 @@ export default function Page() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section id="hero" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <Image
           src="/hero-background.jpg"
